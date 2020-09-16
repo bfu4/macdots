@@ -1,0 +1,4 @@
+#!/bin/sh
+
+yabai --verbose --config ~/.yabairc
+ 
