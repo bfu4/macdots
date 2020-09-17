@@ -33,3 +33,4 @@ set -g theme_display_sudo_user yes
 set -g theme_display_hostname yes
 set -g theme_git_worktree_support yes
 set -g theme_display_vi yes
+set -g theme_color_scheme terminal-dark
