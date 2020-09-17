@@ -16,12 +16,20 @@ end
 
 function cd --description "Replacement for Bash 'cd !!' command to run last command using sudo."
     if test "$argv" = !!
-    eval command cd $history[1]
+    eval command builtin cd $history[1]
 else
-    command cd $argv
+    command builtin cd $argv
     end
 end
 
 thefuck --alias | source
 
 alias whereami="pwd"
+
+alias cd="builtin cd"
+
+set -g theme_display_user yes
+set -g theme_display_sudo_user yes
+set -g theme_display_hostname yes
+set -g theme_git_worktree_support yes
+set -g theme_display_vi yes
