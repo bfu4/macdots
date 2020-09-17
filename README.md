@@ -6,4 +6,4 @@ customization dotfiles for macos
 * xquartz
 * t2 chip completely off (for yabai) 
 
-(/img/bothterms.png)
+![setup](/img/bothterms.png)
