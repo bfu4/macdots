@@ -1,0 +1,43 @@
+set linenumbers
+
+## Syntax highlighting for assembler.
+
+syntax asm "\.(S|s|asm)$"
+magic "assembler source"
+comment "//"
+
+color red "\<[A-Z_]{2,}\>"
+color brightgreen "\.(data|subsection|text)"
+color green "\.(align|file|globl|global|hidden|section|size|type|weak)"
+color brightyellow "\.(ascii|asciz|byte|double|float|hword|int|long|short|single|struct|word)"
+color brightred "^[[:space:]]*[.0-9A-Za-z_]*:"
+color brightcyan "^[[:space:]]*#[[:space:]]*(define|undef|include|ifn?def|endif|elif|else|if|warning|error)"
+
+# Strings.
+color brightyellow "<[^= 	]*>" ""(\\.|[^"])*""
+
+# Comments.
+color brightblue "//.*"
+color brightblue start="/\*" end="\*/"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
+
+
+
+## Syntax highlighting for Java.
+
+syntax java "\.java$"
+magic "Java "
+comment "//"
+
+color green "\<(boolean|byte|char|double|float|int|long|new|short|this|transient|void)\>"
+color red "\<(break|case|catch|continue|default|do|else|finally|for|if|return|switch|throw|try|while)\>"
+color cyan "\<(abstract|class|extends|final|implements|import|instanceof|interface|native)\>"
+color cyan "\<(package|private|protected|public|static|strictfp|super|synchronized|throws|volatile)\>"
+color red ""[^"]*""
+color yellow "\<(true|false|null)\>"
+color blue "//.*"
+color blue start="/\*" end="\*/"
+color brightblue start="/\*\*" end="\*/"
+color ,green "[[:space:]]+$"
