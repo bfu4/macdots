@@ -1,4 +1,3 @@
-
 eval
             function fuck () {
                 TF_PYTHONIOENCODING=$PYTHONIOENCODING;
@@ -19,3 +18,17 @@ alias whereami=`echo pwd`
 
 
 
+export OSH=/Users/bfu4/.oh-my-bash
+OSH_THEME="agnoster"
+completions=(
+  git
+  composer
+  ssh
+)
+plugins=(
+  git
+  bashmarks
+)
+aliases=(
+  general
+)
