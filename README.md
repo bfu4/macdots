@@ -7,3 +7,4 @@ customization dotfiles for macos
 * t2 chip completely off (for yabai) 
 
 ![setup](/img/bothterms.png)
+![setup2](/img/shiroterm.png)
