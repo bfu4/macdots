@@ -1,4 +1,0 @@
-#!/bin/sh
-
-yabai --verbose --config /Users/bfu4/.yabairc
- 
