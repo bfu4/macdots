@@ -1,4 +1,5 @@
 #!/bin/sh
 
-yabai --verbose --config ~/.yabairc
+sudo yabai --load-sa
+yabai --verbose --config /Users/bfu4/.yabairc
  
