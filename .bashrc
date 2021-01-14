@@ -3,7 +3,7 @@ export OSH=/Users/bfu4/.oh-my-bash
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-bash is loaded.
-OSH_THEME="agnoster"
+OSH_THEME="nwinkler"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -132,3 +132,9 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
+alias nano="/usr/local/bin/nano"
+alias ct="/usr/local/bin/classtest"
+
+export nano="/usr/local/bin/nano"
+alias ranger="EDITOR=nano ranger"
+alias gay="toilet -f smmono12 -F gay"
