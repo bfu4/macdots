@@ -32,7 +32,7 @@ export const render = ({ output }) => {
   if (typeof data === "undefined") {
     return (
       <div style={style}>
-        <Error msg="Error: unknown script output" side="right" />
+        <Error msg="oh noes! something went wrong :(" side="right" />
       </div>
     );
   }
