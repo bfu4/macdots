@@ -1,11 +1,5 @@
 # macdots
-customization dotfiles for macos 
+customization dotfiles for macos (M1 edition) 
 ---------------------------------
 
 * requires homebrew
-* xquartz
-* t2 chip completely off (for yabai) 
-
-![big sur](/img/full.png)
-![setup](/img/bothterms.png)
-![setup2](/img/shiroterm.png)

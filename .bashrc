@@ -66,7 +66,6 @@ alias whereami=`echo pwd`
 alias nano="/opt/homebrew/bin/nano"
 alias ct="/usr/local/bin/classtest"
 
-alias ranger="EDITOR=nano ranger"
 alias gay="toilet -f smmono12 -F gay"
 
 # this is hard to type
@@ -74,7 +73,7 @@ ubersicht=Übersicht
 # sdkman but fuck that $HOME/.sdkman/candidates/java/current/bin:
 
 # more env
-export PATH=/opt/homebrew/Cellar/openjdk@11/11.0.9/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/Users/elon/Library/Python/2.7/bin:/opt/homebrew/Cellar/openjdk@11/11.0.9/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
 export GUILE_TLS_CERTIFICATE_DIRECTORY=/usr/local/etc/gnutls/
 
 # lazy
@@ -88,3 +87,11 @@ alias rosetta="arch -x86_64"
 
 # make ls great again
 alias ls="ls -lahtG"
+export BREW_PATH=/opt/homebrew/
+export BREW_INTEL_PATH=/usr/local/Homebrew
+export JAVA_HOME=/opt/homebrew/opt/openjdk/
+alias rosetta-brew="/usr/local/bin/brew"
+export ROSETTA_GEM="/usr/local/Cellar/ruby/3.0.0_1/bin/gem"
+alias pythong=python3
+alias py=python3
+alias pip="python3 -m pip"

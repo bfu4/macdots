@@ -1,0 +1,44 @@
+{
+	"analytics-uuid": "17f51dc6-b419-4f7d-936a-00c0a72efb21",
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1611173934633
+	},
+	"usage": true,
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "103862483569892276391",
+		"email": "bella.lily05@gmail.com",
+		"email_verified": true,
+		"at_hash": "VMPjtnxv-0iLMXIrXnQvew",
+		"iat": 1611173942,
+		"exp": 1611177542
+	},
+	"tokens": {
+		"expires_at": 1611183690868,
+		"refresh_token": "1//0dtm0PrBmbt47CgYIARAAGA0SNwF-L9IrVf1fK-eGmIDGUAHQk2w_jfAJOfXQqfBfgpwu-OzfaEHQFp1raKHdqdhMBDw1dJZVFhQ",
+		"scopes": [
+			"email",
+			"https://www.googleapis.com/auth/cloud-platform",
+			"https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+			"https://www.googleapis.com/auth/firebase",
+			"openid"
+		],
+		"access_token": "ya29.a0AfH6SMC_6QdoO_vHFStHNPSA4rgghwazHTZ5G64VGPOUTr-u_t7zN8Rvd4PjSKvF87HlHYwmnAMkeiuA_VA263irm5tAA-Qek5gYrqzz2QQetpBsLBRPy6thPcswWzg7CnvsfdGL_nLZeH1EXCvfwsjgsDJzMwqlHQg968BwrZ5vl-yCrxQ",
+		"expires_in": 3599,
+		"scope": "openid https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijc4M2VjMDMxYzU5ZTExZjI1N2QwZWMxNTcxNGVmNjA3Y2U2YTJhNmYiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTAzODYyNDgzNTY5ODkyMjc2MzkxIiwiZW1haWwiOiJiZWxsYS5saWx5MDVAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiItTkMxUnVWVHZrNXUzN3RxRjhoMlhBIiwiaWF0IjoxNjExMTgwMDkxLCJleHAiOjE2MTExODM2OTF9.aoODJFBbBpJ3BjBqgLvTlM5sis4Qb6Th0YWjvQ4u7YHH2eBQKMpdpifAa32hOMcLLWx5GZa4JZJMS3_6T-wRMAWY8H84xiyMryTCDxY2ZyV0BXziKFR74PRjggC8gZxa4JSEtPpU3wMy7FIXdCS0soXwKk44R1E9_QLstnE-illO0IBpaBAe7OTZ6LFqJIIoulh_TmNY5Isr4DaO5vtcGioAGoaoo79XwiPl_iiDdMaF1X2vFsuPDutxo0w7IYrk-y7sOd8I_p7W41i4KUIDmCEwEsrTfIRkUHPj2dsT6Z4qJEqnKVajTtO7jbCezVsJ8aiN1c_kvrIFsKeo_WAKVQ"
+	},
+	"activeProjects": {
+		"/Users/elon/workspace/pers/web/pokelang": "pokelang-3f51f"
+	}
+}
