@@ -1,0 +1,3 @@
+[submodule "osxtools"]
+	path = osxtools
+	url = https://github.com/bfu4/osxtools

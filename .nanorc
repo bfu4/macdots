@@ -1,0 +1,310 @@
+# -------- generic settings --------- #
+
+set linenumbers
+
+# ---------    assembler   --------- #
+
+syntax asm "\.(S|s|asm)$"
+magic "assembler source"
+comment "//"
+
+color red "\<[A-Z_]{2,}\>"
+color brightgreen "\.(data|subsection|text)"
+color green "\.(align|file|globl|global|hidden|section|size|type|weak)"
+color brightyellow "\.(ascii|asciz|byte|double|float|hword|int|long|short|single|struct|word)"
+color brightred "^[[:space:]]*[.0-9A-Za-z_]*:"
+color brightcyan "^[[:space:]]*#[[:space:]]*(define|undef|include|ifn?def|endif|elif|else|if|warning|error)"
+
+color brightyellow "<[^= 	]*>" ""(\\.|[^"])*""
+
+color brightblue "//.*"
+color brightblue start="/\*" end="\*/"
+
+color ,green "[[:space:]]+$"
+
+# ---------   java   --------- #
+
+syntax java "\.java$"
+magic "Java "
+comment "//"
+
+color green "\<(boolean|byte|char|double|float|int|long|new|short|this|transient|void)\>"
+color red "\<(break|case|catch|continue|default|do|else|finally|for|if|return|switch|throw|try|while)\>"
+color cyan "\<(abstract|class|extends|final|implements|import|instanceof|interface|native)\>"
+color cyan "\<(package|private|protected|public|static|strictfp|super|synchronized|throws|volatile)\>"
+color red ""[^"]*""
+color yellow "\<(true|false|null)\>"
+color blue "//.*"
+color blue start="/\*" end="\*/"
+color brightblue start="/\*\*" end="\*/"
+color ,green "[[:space:]]+$"
+
+# --------   makefile   -------- #
+
+syntax makefile "(/((GNU)?m|M)akefile[^/]*$|\.(make|mk)$)"
+magic "makefile script"
+comment "#"
+
+color red " (:?:|\+|\?)?= "
+
+color magenta "^(if|ifn?def|ifn?eq|else|endif|(-|s)?include)\>"
+color magenta "^((override +)?(un)?define|endef|(un)?export|private|vpath)\>"
+
+color blue "\$+[{(][a-zA-Z0-9_-]+[})]"
+
+color brightblue "^[^ 	]+:"
+
+color green "(^|[[:space:]]+)#.*"
+
+color ,green "[[:space:]]+$"
+
+# ---------   shell   --------- #
+
+syntax sh "(\.sh|(\.|/)(a|ba|c|da|k|mk|pdk|tc|z)sh(rc|_profile)?|/(etc/|\.)profile)$"
+header "^#!.*/(((a|ba|c|da|k|mk|pdk|tc|z)?sh)|(busybox|env) +sh|openrc-run|runscript)"
+magic "(POSIX|Bourne-Again) shell script.*text"
+comment "#"
+
+linter dash -n
+
+color brightgreen "^[A-Za-z0-9_-]+\(\)"
+
+color green "\<(break|case|continue|do|done|elif|else|esac|exit|fi|for|function|if|in|read|return|select|shift|then|time|until|while)\>"
+color green "\<(declare|eval|exec|export|let|local)\>"
+color green "[{}():;|`$<>!=&\\]" "(\]|\[)"
+color green "-(eq|ne|gt|lt|ge|le|ef|ot|nt)\>"
+
+color brightmagenta "[[:blank:]]-[A-Za-z]\>" "[[:blank:]]--[A-Za-z-]+\>"
+
+color brightblue "\<(awk|cat|cd|ch(grp|mod|own)|cp|cut|echo|env|grep|head|install|ln|make|mkdir|mv|popd|printf|pushd|rm|rmdir|sed|set|sort|tail|tar|touch|umask|unset)\>"
+color normal "[.-]tar\>"
+
+color brightred "\$[-0-9@*#?$!]" "\$[[:alpha:]_][[:alnum:]_]*"
+
+color brightred "\$\{[#!]?([-@*#?$!]|[0-9]+|[[:alpha:]_][[:alnum:]_]*)(\[([[:space:]]*[[:alnum:]_]+[[:space:]]*|@)\])?(([#%/]|:?[-=?+])[^}]*\}|\[|\})"
+
+color cyan "(^|[[:space:]])#.*"
+
+color brightyellow ""(\\.|[^"])*"" "'(\\.|[^'])*'"
+
+color ,green "[[:space:]]+$"
+
+# solidity nano configuration, by yours truly
+
+syntax sol "\.sol$"
+comment "//"
+
+# keywords
+
+color green "\<(abstract|after|anonymous|as|assembly|assert|break|constant|constructor|continue|default|delete|do|else|emit|enum|event|external|for|if|import|in|interface|internal|is|mapping|modifier|new|override|payable|pragma|private|pure|require|return|returns|revert|storage|struct|switch|this|throw|using|var|view|virtual|while)\>"
+
+# sol-constants
+color blue "\<(contract|public|library|indexed|storage|memory)\>"
+
+# built-in types
+color cyan "\<(address|bool|bytes|bytes0|bytes1|bytes2|bytes3|bytes4|bytes5|bytes6|bytes7|bytes8|bytes9|bytes10|bytes11|bytes12|bytes13|bytes14|bytes15|bytes16|bytes17|bytes18|bytes19|bytes20|bytes21|bytes22|bytes23|bytes24|bytes25|bytes26|bytes27|bytes28|bytes29|bytes30|bytes31|bytes32|int|int8|int16|int24|int32|int40|int48|int56|int64|int72|int80|int88|int96|int104|int112|int120|int128|int136|int144|int152|int160|int168|int176|int184|int192|int200|int208|int216|int224|int232|int240|int248|int256)\>"
+color cyan "\<(let|mapping|real|string|text)\>"
+color cyan "\<(uint|uint8|uint16|uint24|uint32|uint40|uint48|uint56|uint64|uint72|uint80|uint96|uint104|uint112|uint120|uint128|uint136|uint144|uint152|uint160|uint168|uint176|uint176|uint184|uint192|uint200|uint200|uint208|uint216|uint224|uint232|uint240|uint248|uint256)\>"
+
+# builtin constructs
+
+color brightcyan "\<(msg|block|tx)\>"
+
+# sol variable attr
+# color brightblue "\\(&\\|*\\|~\\)"
+
+# comment stuff
+color magenta "//.*"
+color magenta start="/\*" end="\*/"
+
+# quote prim
+color red ""[^"]*""
+
+# solidity nano configuration, by yours truly
+
+syntax sol "\.sol$"
+comment "//"
+
+# keywords
+
+color green "\<(abstract|after|anonymous|as|assembly|assert|break|constant|constructor|continue|default|delete|do|else|emit|enum|event|external|for|function|if|import|in|interface|internal|is|mapping|modifier|new|override|payable|pragma|private|pure|require|return|returns|revert|storage|struct|switch|this|throw|using|var|view|virtual|while)\>"
+
+# sol-constants
+color blue "\<(contract|public|library|indexed|storage|memory)\>"
+
+# built-in types
+color cyan "\<(address|bool|bytes|bytes0|bytes1|bytes2|bytes3|bytes4|bytes5|bytes6|bytes7|bytes8|bytes9|bytes10|bytes11|bytes12|bytes13|bytes14|bytes15|bytes16|bytes17|bytes18|bytes19|bytes20|bytes21|bytes22|bytes23|bytes24|bytes25|bytes26|bytes27|bytes28|bytes29|bytes30|bytes31|bytes32|int|int8|int16|int24|int32|int40|int48|int56|int64|int72|int80|int88|int96|int104|int112|int120|int128|int136|int144|int152|int160|int168|int176|int184|int192|int200|int208|int216|int224|int232|int240|int248|int256)\>"
+color cyan "\<(let|mapping|real|string|text)\>"
+color cyan "\<(uint|uint8|uint16|uint24|uint32|uint40|uint48|uint56|uint64|uint72|uint80|uint96|uint104|uint112|uint120|uint128|uint136|uint144|uint152|uint160|uint168|uint176|uint176|uint184|uint192|uint200|uint200|uint208|uint216|uint224|uint232|uint240|uint248|uint256)\>"
+
+# builtin constructs
+
+color brightcyan "\<(msg|block|tx)\>"
+
+# comment stuff
+color magenta "//.*"
+color magenta start="/\*" end="\*/"
+
+# primitives
+color red ""[^"]*""
+color brightgreen "^[0-9]*"
+## Syntax highlighting for Javascript.
+
+syntax javascript "\.js$"
+comment "//"
+
+# Declarational stuff.
+color green "\<(async|class|const|extends|function|let|this|typeof|var|void)\>"
+# Flow control and special keywords.
+color brightyellow "\<(do|while|if|else|switch|case|default|for|each|in|of|with)\>"
+color brightyellow "\<(await|export|import|throw|try|catch|finally|new|delete)\>"
+# "Exit" points.
+color magenta "\<(break|continue|return|yield)\>"
+
+# Octal/decimal and hexadecimal numbers.
+color cyan "\<([0-9]+|0x[0-9A-Fa-f]+)\>"
+# Special values.
+color cyan "\<(true|false|null|undefined)\>"
+
+# Strings.
+color brightmagenta ""(\\.|[^"])*"" "'(\\.|[^'])*'" "`(\\.|[^`])*`"
+# Comments.
+color brightblue "(^|[[:space:]])//.*"
+color brightblue start="/\*" end="\*/"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"
+# solidity nano configuration, by yours truly
+
+syntax sol "\.sol$"
+comment "//"
+
+# keywords
+
+color green "\<(abstract|after|anonymous|as|assembly|assert|break|constant|constructor|continue|default|delete|do|else|emit|enum|event|external|for|function|if|import|in|interface|internal|is|mapping|modifier|new|override|payable|pragma|private|pure|require|return|returns|revert|storage|struct|switch|this|throw|using|var|view|virtual|while)\>"
+
+# sol-constants
+color blue "\<(contract|public|library|indexed|storage|memory)\>"
+
+# built-in types
+color cyan "\<(address|bool|bytes|bytes0|bytes1|bytes2|bytes3|bytes4|bytes5|bytes6|bytes7|bytes8|bytes9|bytes10|bytes11|bytes12|bytes13|bytes14|bytes15|bytes16|bytes17|bytes18|bytes19|bytes20|bytes21|bytes22|bytes23|bytes24|bytes25|bytes26|bytes27|bytes28|bytes29|bytes30|bytes31|bytes32|int|int8|int16|int24|int32|int40|int48|int56|int64|int72|int80|int88|int96|int104|int112|int120|int128|int136|int144|int152|int160|int168|int176|int184|int192|int200|int208|int216|int224|int232|int240|int248|int256)\>"
+color cyan "\<(let|mapping|real|string|text)\>"
+color cyan "\<(uint|uint8|uint16|uint24|uint32|uint40|uint48|uint56|uint64|uint72|uint80|uint96|uint104|uint112|uint120|uint128|uint136|uint144|uint152|uint160|uint168|uint176|uint176|uint184|uint192|uint200|uint200|uint208|uint216|uint224|uint232|uint240|uint248|uint256)\>"
+
+# builtin constructs
+
+color brightcyan "\<(msg|block|tx)\>"
+
+# comment stuff
+color magenta "//.*"
+color magenta start="/\*" end="\*/"
+
+# primitives
+color red ""[^"]*""
+color brightgreen "<\(keccak256|abi|encode)\>"
+# solidity nano configuration, by yours truly
+
+syntax sol "\.sol$"
+comment "//"
+
+# keywords
+
+color green "\<(abstract|after|anonymous|as|assembly|assert|break|constant|constructor|continue|default|delete|do|else|emit|enum|event|external|for|function|if|import|in|interface|internal|is|mapping|modifier|new|override|payable|pragma|private|pure|require|return|returns|revert|storage|struct|switch|this|throw|using|var|view|virtual|while)\>"
+
+# sol-constants
+color blue "\<(contract|public|library|indexed|storage|memory)\>"
+
+# built-in types
+color cyan "\<(address|bool|bytes|bytes0|bytes1|bytes2|bytes3|bytes4|bytes5|bytes6|bytes7|bytes8|bytes9|bytes10|bytes11|bytes12|bytes13|bytes14|bytes15|bytes16|bytes17|bytes18|bytes19|bytes20|bytes21|bytes22|bytes23|bytes24|bytes25|bytes26|bytes27|bytes28|bytes29|bytes30|bytes31|bytes32|int|int8|int16|int24|int32|int40|int48|int56|int64|int72|int80|int88|int96|int104|int112|int120|int128|int136|int144|int152|int160|int168|int176|int184|int192|int200|int208|int216|int224|int232|int240|int248|int256)\>"
+color cyan "\<(let|mapping|real|string|text)\>"
+color cyan "\<(uint|uint8|uint16|uint24|uint32|uint40|uint48|uint56|uint64|uint72|uint80|uint96|uint104|uint112|uint120|uint128|uint136|uint144|uint152|uint160|uint168|uint176|uint176|uint184|uint192|uint200|uint200|uint208|uint216|uint224|uint232|uint240|uint248|uint256)\>"
+
+# builtin constructs
+
+color brightcyan "\<(msg|block|tx)\>"
+
+# comment stuff
+color magenta "//.*"
+color magenta start="/\*" end="\*/"
+
+# primitives
+color red ""[^"]*""
+color brightblue "<\(keccak256|abi|encode)\>"
+# solidity nano configuration, by yours truly
+
+syntax sol "\.sol$"
+comment "//"
+
+# keywords
+
+color green "\<(abstract|after|anonymous|as|assembly|assert|break|constant|constructor|continue|default|delete|do|else|emit|enum|event|external|for|function|if|import|in|interface|internal|is|mapping|modifier|new|override|payable|pragma|private|pure|require|return|returns|revert|storage|struct|switch|this|throw|using|var|view|virtual|while)\>"
+
+# sol-constants
+color blue "\<(contract|public|library|indexed|storage|memory)\>"
+
+# built-in types
+color cyan "\<(address|bool|bytes|bytes0|bytes1|bytes2|bytes3|bytes4|bytes5|bytes6|bytes7|bytes8|bytes9|bytes10|bytes11|bytes12|bytes13|bytes14|bytes15|bytes16|bytes17|bytes18|bytes19|bytes20|bytes21|bytes22|bytes23|bytes24|bytes25|bytes26|bytes27|bytes28|bytes29|bytes30|bytes31|bytes32|int|int8|int16|int24|int32|int40|int48|int56|int64|int72|int80|int88|int96|int104|int112|int120|int128|int136|int144|int152|int160|int168|int176|int184|int192|int200|int208|int216|int224|int232|int240|int248|int256)\>"
+color cyan "\<(let|mapping|real|string|text)\>"
+color cyan "\<(uint|uint8|uint16|uint24|uint32|uint40|uint48|uint56|uint64|uint72|uint80|uint96|uint104|uint112|uint120|uint128|uint136|uint144|uint152|uint160|uint168|uint176|uint176|uint184|uint192|uint200|uint200|uint208|uint216|uint224|uint232|uint240|uint248|uint256)\>"
+
+# builtin constructs
+
+color brightcyan "\<(msg|block|tx)\>"
+
+# comment stuff
+color magenta "//.*"
+color magenta start="/\*" end="\*/"
+
+# primitives
+color red ""(\\.|[^"])*"" "'(\\.|[^'])*'" "`(\\.|[^`])*`"
+color cyan "\<([0-9]+|0x[0-9A-Fa-f]+)\>"
+
+color brightgreen "\<(true|false|null|undefined)\>"
+
+color brightblue "<\(keccak256|abi|encode)\>"
+## Syntax highlighting for C and C++ files.
+
+syntax c "\.([ch](pp|xx)?|C|cc|c\+\+|cu|H|hh|ii?)$"
+header "-\*-.*\<C(\+\+)?((;|\s).*)?-\*-"
+magic "^(C|C\+\+) (source|program)"
+comment "//"
+
+# Constants.
+color brightred "\<[A-Z_][0-9A-Z_]*\>"
+# Labels.
+color brightmagenta "^[[:space:]]*[A-Z_a-z]+:[[:space:]]*$"
+
+# Types and related keywords.
+color green "\<(auto|bool|char|const|double|enum|extern|float|inline|int|long|restrict|short|signed|sizeof|static|struct|typedef|union|unsigned|void)\>"
+color green "\<([[:lower:]][[:lower:]_]*|(u_?)?int(8|16|32|64))_t\>"
+color green "\<(_(Alignas|Alignof|Atomic|Bool|Complex|Generic|Imaginary|Noreturn|Static_assert|Thread_local))\>"
+color green "\<(class|explicit|friend|mutable|namespace|override|private|protected|public|register|template|this|typename|using|virtual|volatile)\>"
+
+# Flow control.
+color brightyellow "\<(if|else|for|while|do|switch|case|default)\>"
+color brightyellow "\<(try|throw|catch|operator|new|delete)\>"
+color magenta "\<(break|continue|goto|return)\>"
+
+# Single-quoted stuff (characters, backslash escapes, hex and octal byte codes).
+color brightmagenta "'([^'\]|\\(["'\abfnrtv]|x[0-9A-Fa-f]{1,2}|[0-3]?[0-7]{1,2}))'"
+
+# GCC builtins.
+color cyan "__attribute__[[:space:]]*\(\([^)]*\)\)" "__(aligned|asm|builtin|hidden|inline|packed|restrict|section|typeof|weak)__"
+
+# Strings.  (In general you will want your strings and comments to come last,
+# because highlighting rules are applied in the order they are read in.)
+color brightyellow ""([^"]|\\")*"" "#[[:space:]]*include[[:space:]]+<[^[:blank:]=]*>"
+
+# Preprocessor directives.
+color brightcyan start="^[[:space:]]*#[[:space:]]*(if(n?def)?|elif|warning|error|pragma)\>" end="(\`|[^\\])$"
+color brightcyan "^[[:space:]]*#[[:space:]]*((define|else|endif|include(_next)?|line|undef)\>|$)"
+
+# Comments.
+color brightblue "//.*"
+color brightblue start="/\*" end="\*/"
+
+# Reminders.
+color brightwhite,yellow "\<(FIXME|TODO|XXX)\>"
+
+# Trailing whitespace.
+color ,green "[[:space:]]+$"

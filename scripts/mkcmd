@@ -1,0 +1,76 @@
+####### more bullshit to make my life easy #######
+
+complete() {
+printf "\033[1;35m[*] Complete!\033[0m\n"
+}
+
+foo="$2"
+
+
+argt() {
+bar="$foo"
+}
+
+cfte() {
+rv=""
+if test -e /usr/bin/nano 
+then rv="n"	
+elif test -e /usr/bin/vim
+then rv="v"
+fi
+echo "$rv" 
+}
+
+
+
+make() {
+rv=$(cfte)
+bar="$foo"
+	if [[ "$rv" == "n" ]]
+		then nano $bar
+			cp $bar /usr/local/bin
+			chmod +x /usr/local/bin/$bar
+			complete
+	elif [[ "$rv" == "v" ]]
+		then vim $bar
+			cp $bar /usr/local/bin
+			chmod +x /usr/local/bin/$bar
+			complete	
+	else
+		echo 
+	 	printf "\033[1;31m vim and or nano not found\033[0m\n"
+	fi
+}
+
+prxs() {
+
+bar=$foo
+rdr=${bar##*/}
+case $bar in
+"") echo "usage: mkcmd -p [filepath]" ;;
+" ") echo "usage: mkcmd -p [filepath]" ;;
+*)cp $bar /usr/local/bin && chmod +x /usr/local/bin/$rdr && complete ;;
+esac
+}
+
+usage() {
+ echo "usage: mkcmd [-options] [args]"
+ echo "options: "
+ echo "-p: make from pre-existing file."
+ echo "-n: make from new file."
+}
+
+check() {
+cfte
+rv=$?
+argt
+foo=$?
+}
+
+case $1 in
+"-p") check & prxs;;
+"-n") check & make;;
+*) usage;;
+esac
+
+####### end of bullshit #######
